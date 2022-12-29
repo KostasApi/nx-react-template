@@ -10,7 +10,6 @@
     "build:admin": "nx run admin:build:production",
     "build:store": "nx run store:build:production",
     "test": "nx run-many --all --codeCoverage --target=test",
-    "test:watch": "nx run-many --all --codeCoverage --watchAll --target=test",
     "test:admin": "nx test admin --watchAll --codeCoverage",
     "test:store": "nx test store --watchAll --codeCoverage",
     "test:products": "nx test products --watchAll --codeCoverage",
