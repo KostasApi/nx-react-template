@@ -76,7 +76,7 @@
     "tslib": "^2.3.0"
   },
   "lint-staged": {
-    "{apps,libs}**/*.{js,jsx,ts,tsx,css,scss,json,md,html}": [
+    "**/*.{js,jsx,ts,tsx,css,scss,json,md,html}": [
       "npm run lint",
       "npm run format"
     ]
