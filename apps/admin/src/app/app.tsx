@@ -6,6 +6,7 @@ export function App() {
     <div>
       <Banner text="Welcome to our admin app!" />
       <button onClick={() => console.log('button clicked!')}>Click me!</button>
+      <div>temp message</div>
     </div>
   );
 }
