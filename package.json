@@ -3,6 +3,19 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "serve": "nx run-many --target=serve --all",
+    "serve:admin": "nx run admin:serve",
+    "serve:store": "nx run store:serve",
+    "build": "nx run-many --target=build --all",
+    "build:admin": "nx run admin:build:production",
+    "build:store": "nx run store:build:production",
+    "test": "nx run-many --all --codeCoverage --target=test",
+    "test:watch": "nx run-many --all --codeCoverage --watchAll --target=test",
+    "test:admin": "nx test admin --watchAll --codeCoverage",
+    "test:store": "nx test store --watchAll --codeCoverage",
+    "test:products": "nx test products --watchAll --codeCoverage",
+    "test:common-ui": "nx test common-ui --watchAll --codeCoverage",
+    "graph": "nx graph",
     "lint": "nx run-many --all --target=lint",
     "format:check": "nx format:check --all",
     "format": "nx format:write --all"
@@ -56,7 +69,7 @@
     "tslib": "^2.3.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
+    "{apps,libs}**/*.{js,jsx,ts,tsx,css,scss,json,md,html}": [
       "npm run lint",
       "npm run format"
     ]
