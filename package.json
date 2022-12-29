@@ -6,9 +6,11 @@
     "serve": "nx run-many --target=serve --all",
     "serve:admin": "nx run admin:serve",
     "serve:store": "nx run store:serve",
-    "build": "nx run-many --target=build --all",
-    "build:admin": "nx run admin:build:production",
-    "build:store": "nx run store:build:production",
+    "build": "nx run-many --target=build --prod --all",
+    "build:admin": "nx run admin:build:production --skip-nx-cache -- --memoryLimit=8192 --statsJson",
+    "build:store": "nx run store:build:production --skip-nx-cache -- --memoryLimit=8192 --statsJson",
+    "analyze:admin": "npm run build:admin & webpack-bundle-analyzer dist/apps/admin/stats.json -p 8888",
+    "analyze:store": "npm run build:store & webpack-bundle-analyzer dist/apps/store/stats.json -p 8889",
     "test": "nx run-many --all --codeCoverage --target=test",
     "test:admin": "nx test admin --watchAll --codeCoverage",
     "test:store": "nx test store --watchAll --codeCoverage",
@@ -66,7 +68,8 @@
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack-bundle-analyzer": "^4.7.0"
   },
   "dependencies": {
     "core-js": "^3.6.5",
