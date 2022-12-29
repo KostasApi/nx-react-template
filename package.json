@@ -22,6 +22,9 @@
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/config-nx-scopes": "^17.2.0",
     "@nrwl/cypress": "15.4.2",
     "@nrwl/eslint-plugin-nx": "15.4.2",
     "@nrwl/jest": "15.4.2",
@@ -39,7 +42,9 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "28.1.1",
+    "commitizen": "^4.2.6",
     "cypress": "^11.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -72,5 +77,10 @@
       "npm run lint",
       "npm run format"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
